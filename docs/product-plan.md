@@ -1,4 +1,4 @@
-# OpenClawd Studio Product Plan
+# OpenClaw Studio Product Plan
 
 ## Product thesis
 
@@ -36,7 +36,7 @@ OpenClaw is already strong at runtime, multi-channel delivery, and onboarding. T
 
 ## Install growth strategy
 
-- Optimize the Marketplace listing around “OpenClaw”, “OpenClawd”, “Claude”, “agent”, and “plugin”.
+- Optimize the Marketplace listing around “OpenClaw”, “Claude”, “agent”, and “plugin”.
 - Keep zero required credentials in the extension itself.
 - Publish screenshots and a clear one-minute onboarding story in the README.
 - Ask for sponsorship only after value: after doctor success and from the dashboard.

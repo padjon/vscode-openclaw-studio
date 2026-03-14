@@ -3,7 +3,7 @@ import type { WorkspaceSummary } from "../core/types";
 import { joinUriPath } from "../core/workspace";
 
 export class StudioSidebarProvider implements vscode.WebviewViewProvider {
-  public static readonly viewType = "openclawdStudio.sidebar";
+  public static readonly viewType = "openclawStudio.sidebar";
 
   private view?: vscode.WebviewView;
   private summary: WorkspaceSummary | null = null;
@@ -196,7 +196,7 @@ export class StudioSidebarProvider implements vscode.WebviewViewProvider {
   <body>
     <main>
       <section class="hero">
-        <div class="eyebrow">OpenClawd Studio</div>
+        <div class="eyebrow">OpenClaw Studio</div>
         <h1>${escapeHtml(summary?.workspaceName ?? "Workspace")} control center</h1>
         <p>Ship OpenClaw faster with guided setup, config guardrails, and plugin scaffolding inside VS Code.</p>
       </section>

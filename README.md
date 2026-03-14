@@ -1,9 +1,9 @@
-# OpenClawd Studio
+# OpenClaw Studio
 
-[![Install on Marketplace](https://img.shields.io/badge/Marketplace-OpenClawd%20Studio-0078D4?style=for-the-badge&logo=visualstudiocode&logoColor=white)](https://marketplace.visualstudio.com/items?itemName=padjon.openclawd-studio)
+[![Install on Marketplace](https://img.shields.io/badge/Marketplace-OpenClaw%20Studio-0078D4?style=for-the-badge&logo=visualstudiocode&logoColor=white)](https://marketplace.visualstudio.com/items?itemName=padjon.openclaw-studio)
 [![Sponsor on GitHub](https://img.shields.io/badge/Sponsor-GitHub%20Sponsors-EA4AAA?style=for-the-badge&logo=githubsponsors&logoColor=white)](https://github.com/sponsors/padjon)
 
-OpenClawd Studio is a VS Code extension for people working with OpenClaw and OpenClawd. It is built around the practical work developers do every day: creating `openclaw.json`, validating workspace config, scaffolding plugins, and launching the CLI from inside the editor.
+OpenClaw Studio is a VS Code extension for people working with OpenClaw. It is built around the practical work developers do every day: creating `openclaw.json`, validating workspace config, scaffolding plugins, and launching the CLI from inside the editor.
 
 This is not another generic AI chat sidebar. The product goal is faster setup, fewer broken configs, and a better plugin-authoring loop.
 
@@ -27,13 +27,13 @@ Research and product planning live in:
 
 ## Commands
 
-- `OpenClawd Studio: Open Dashboard`
-- `OpenClawd Studio: Run Workspace Doctor`
-- `OpenClawd Studio: Create openclaw.json`
-- `OpenClawd Studio: Scaffold Plugin`
-- `OpenClawd Studio: Run openclaw onboard`
-- `OpenClawd Studio: Run Gateway`
-- `OpenClawd Studio: Open Docs`
+- `OpenClaw Studio: Open Dashboard`
+- `OpenClaw Studio: Run Workspace Doctor`
+- `OpenClaw Studio: Create openclaw.json`
+- `OpenClaw Studio: Scaffold Plugin`
+- `OpenClaw Studio: Run openclaw onboard`
+- `OpenClaw Studio: Run Gateway`
+- `OpenClaw Studio: Open Docs`
 
 ## Local development
 
@@ -54,7 +54,7 @@ npm run package:vsix
 The monetization strategy is sponsorship-led, not paywalled. If the extension saves time, support continued development via:
 
 - GitHub Sponsors: https://github.com/sponsors/padjon
-- VS Code Marketplace: https://marketplace.visualstudio.com/items?itemName=padjon.openclawd-studio
+- VS Code Marketplace: https://marketplace.visualstudio.com/items?itemName=padjon.openclaw-studio
 
 ## Notes
 

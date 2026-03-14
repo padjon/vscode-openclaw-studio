@@ -1,18 +1,18 @@
 {
-  "name": "openclawd-studio",
-  "displayName": "OpenClawd Studio",
-  "description": "A VS Code control center for OpenClaw and OpenClawd projects with onboarding, config doctoring, and plugin scaffolding.",
+  "name": "openclaw-studio",
+  "displayName": "OpenClaw Studio",
+  "description": "A VS Code control center for OpenClaw projects with onboarding, config doctoring, and plugin scaffolding.",
   "version": "0.1.0",
   "publisher": "padjon",
   "license": "MIT",
   "private": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/padjon/vscode-openclawd-studio.git"
+    "url": "https://github.com/padjon/vscode-openclaw-studio.git"
   },
-  "homepage": "https://github.com/padjon/vscode-openclawd-studio#readme",
+  "homepage": "https://github.com/padjon/vscode-openclaw-studio#readme",
   "bugs": {
-    "url": "https://github.com/padjon/vscode-openclawd-studio/issues"
+    "url": "https://github.com/padjon/vscode-openclaw-studio/issues"
   },
   "engines": {
     "vscode": "^1.105.0"
@@ -24,7 +24,6 @@
   ],
   "keywords": [
     "openclaw",
-    "openclawd",
     "claude",
     "agent",
     "assistant",
@@ -34,13 +33,13 @@
   ],
   "activationEvents": [
     "onStartupFinished",
-    "onCommand:openclawdStudio.openDashboard",
-    "onCommand:openclawdStudio.runDoctor",
-    "onCommand:openclawdStudio.scaffoldWorkspaceConfig",
-    "onCommand:openclawdStudio.scaffoldPlugin",
-    "onCommand:openclawdStudio.runOnboard",
-    "onCommand:openclawdStudio.runGateway",
-    "onView:openclawdStudio.sidebar"
+    "onCommand:openclawStudio.openDashboard",
+    "onCommand:openclawStudio.runDoctor",
+    "onCommand:openclawStudio.scaffoldWorkspaceConfig",
+    "onCommand:openclawStudio.scaffoldPlugin",
+    "onCommand:openclawStudio.runOnboard",
+    "onCommand:openclawStudio.runGateway",
+    "onView:openclawStudio.sidebar"
   ],
   "main": "dist/extension.js",
   "icon": "media/icon.png",
@@ -54,55 +53,55 @@
   "contributes": {
     "commands": [
       {
-        "command": "openclawdStudio.openDashboard",
-        "title": "OpenClawd Studio: Open Dashboard",
-        "category": "OpenClawd Studio"
+        "command": "openclawStudio.openDashboard",
+        "title": "OpenClaw Studio: Open Dashboard",
+        "category": "OpenClaw Studio"
       },
       {
-        "command": "openclawdStudio.runDoctor",
-        "title": "OpenClawd Studio: Run Workspace Doctor",
-        "category": "OpenClawd Studio"
+        "command": "openclawStudio.runDoctor",
+        "title": "OpenClaw Studio: Run Workspace Doctor",
+        "category": "OpenClaw Studio"
       },
       {
-        "command": "openclawdStudio.scaffoldWorkspaceConfig",
-        "title": "OpenClawd Studio: Create openclaw.json",
-        "category": "OpenClawd Studio"
+        "command": "openclawStudio.scaffoldWorkspaceConfig",
+        "title": "OpenClaw Studio: Create openclaw.json",
+        "category": "OpenClaw Studio"
       },
       {
-        "command": "openclawdStudio.scaffoldPlugin",
-        "title": "OpenClawd Studio: Scaffold Plugin",
-        "category": "OpenClawd Studio"
+        "command": "openclawStudio.scaffoldPlugin",
+        "title": "OpenClaw Studio: Scaffold Plugin",
+        "category": "OpenClaw Studio"
       },
       {
-        "command": "openclawdStudio.runOnboard",
-        "title": "OpenClawd Studio: Run openclaw onboard",
-        "category": "OpenClawd Studio"
+        "command": "openclawStudio.runOnboard",
+        "title": "OpenClaw Studio: Run openclaw onboard",
+        "category": "OpenClaw Studio"
       },
       {
-        "command": "openclawdStudio.runGateway",
-        "title": "OpenClawd Studio: Run Gateway",
-        "category": "OpenClawd Studio"
+        "command": "openclawStudio.runGateway",
+        "title": "OpenClaw Studio: Run Gateway",
+        "category": "OpenClaw Studio"
       },
       {
-        "command": "openclawdStudio.openDocs",
-        "title": "OpenClawd Studio: Open Docs",
-        "category": "OpenClawd Studio"
+        "command": "openclawStudio.openDocs",
+        "title": "OpenClaw Studio: Open Docs",
+        "category": "OpenClaw Studio"
       }
     ],
     "viewsContainers": {
       "activitybar": [
         {
-          "id": "openclawdStudio",
-          "title": "OpenClawd",
+          "id": "openclawStudio",
+          "title": "OpenClaw",
           "icon": "media/activitybar.svg"
         }
       ]
     },
     "views": {
-      "openclawdStudio": [
+      "openclawStudio": [
         {
           "type": "webview",
-          "id": "openclawdStudio.sidebar",
+          "id": "openclawStudio.sidebar",
           "name": "Studio"
         }
       ]
@@ -110,37 +109,37 @@
     "menus": {
       "view/title": [
         {
-          "command": "openclawdStudio.openDashboard",
-          "when": "view == openclawdStudio.sidebar",
+          "command": "openclawStudio.openDashboard",
+          "when": "view == openclawStudio.sidebar",
           "group": "navigation"
         },
         {
-          "command": "openclawdStudio.runDoctor",
-          "when": "view == openclawdStudio.sidebar",
+          "command": "openclawStudio.runDoctor",
+          "when": "view == openclawStudio.sidebar",
           "group": "navigation"
         }
       ],
       "commandPalette": [
         {
-          "command": "openclawdStudio.openDashboard",
+          "command": "openclawStudio.openDashboard",
           "when": "workspaceFolderCount >= 0"
         }
       ]
     },
     "configuration": {
-      "title": "OpenClawd Studio",
+      "title": "OpenClaw Studio",
       "properties": {
-        "openclawdStudio.autoRunDoctor": {
+        "openclawStudio.autoRunDoctor": {
           "type": "boolean",
           "default": true,
           "description": "Run lightweight OpenClaw workspace validation whenever an openclaw.json or openclaw.plugin.json file changes."
         },
-        "openclawdStudio.cliBinary": {
+        "openclawStudio.cliBinary": {
           "type": "string",
           "default": "openclaw",
           "description": "CLI binary used when running OpenClaw commands from VS Code."
         },
-        "openclawdStudio.preferredPackageManager": {
+        "openclawStudio.preferredPackageManager": {
           "type": "string",
           "default": "npm",
           "enum": [
@@ -150,7 +149,7 @@
           ],
           "description": "Package manager command shown in onboarding recommendations."
         },
-        "openclawdStudio.sponsorNudgeDismissed": {
+        "openclawStudio.sponsorNudgeDismissed": {
           "type": "boolean",
           "default": false,
           "markdownDescription": "Internal state for sponsor messaging. Set to `true` to hide sponsor reminders."

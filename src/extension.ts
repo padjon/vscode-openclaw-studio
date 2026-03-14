@@ -9,7 +9,7 @@ import { StudioSidebarProvider } from "./views/studioSidebarProvider";
 
 const sponsorUrl = "https://github.com/sponsors/padjon";
 const docsUrl = "https://docs.openclaw.ai";
-const sponsorStateKey = "openclawdStudio.sponsorDismissed";
+const sponsorStateKey = "openclawStudio.sponsorDismissed";
 
 let diagnostics: vscode.DiagnosticCollection;
 let statusBar: vscode.StatusBarItem;
@@ -17,9 +17,9 @@ let sidebarProvider: StudioSidebarProvider;
 let latestSummary: WorkspaceSummary | null = null;
 
 export async function activate(context: vscode.ExtensionContext): Promise<void> {
-  diagnostics = vscode.languages.createDiagnosticCollection("openclawdStudio");
+  diagnostics = vscode.languages.createDiagnosticCollection("openclawStudio");
   statusBar = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 50);
-  statusBar.command = "openclawdStudio.openDashboard";
+  statusBar.command = "openclawStudio.openDashboard";
   statusBar.show();
 
   sidebarProvider = new StudioSidebarProvider(context.extensionUri, (message) => {
@@ -30,17 +30,17 @@ export async function activate(context: vscode.ExtensionContext): Promise<void> 
     diagnostics,
     statusBar,
     vscode.window.registerWebviewViewProvider(StudioSidebarProvider.viewType, sidebarProvider),
-    vscode.commands.registerCommand("openclawdStudio.openDashboard", async () => {
-      await vscode.commands.executeCommand("workbench.view.extension.openclawdStudio");
+    vscode.commands.registerCommand("openclawStudio.openDashboard", async () => {
+      await vscode.commands.executeCommand("workbench.view.extension.openclawStudio");
     }),
-    vscode.commands.registerCommand("openclawdStudio.runDoctor", async () => {
+    vscode.commands.registerCommand("openclawStudio.runDoctor", async () => {
       await refreshWorkspaceSummary(context, true);
     }),
-    vscode.commands.registerCommand("openclawdStudio.scaffoldWorkspaceConfig", scaffoldWorkspaceConfig),
-    vscode.commands.registerCommand("openclawdStudio.scaffoldPlugin", scaffoldPlugin),
-    vscode.commands.registerCommand("openclawdStudio.runOnboard", () => runTerminalCommand(`${getCliBinary()} onboard --install-daemon`)),
-    vscode.commands.registerCommand("openclawdStudio.runGateway", () => runTerminalCommand(`${getCliBinary()} gateway --port 18789 --verbose`)),
-    vscode.commands.registerCommand("openclawdStudio.openDocs", () => {
+    vscode.commands.registerCommand("openclawStudio.scaffoldWorkspaceConfig", scaffoldWorkspaceConfig),
+    vscode.commands.registerCommand("openclawStudio.scaffoldPlugin", scaffoldPlugin),
+    vscode.commands.registerCommand("openclawStudio.runOnboard", () => runTerminalCommand(`${getCliBinary()} onboard --install-daemon`)),
+    vscode.commands.registerCommand("openclawStudio.runGateway", () => runTerminalCommand(`${getCliBinary()} gateway --port 18789 --verbose`)),
+    vscode.commands.registerCommand("openclawStudio.openDocs", () => {
       void vscode.env.openExternal(vscode.Uri.parse(docsUrl));
     }),
     vscode.workspace.onDidSaveTextDocument(() => {
@@ -68,22 +68,22 @@ export function deactivate(): void {
 async function handleSidebarMessage(context: vscode.ExtensionContext, command: string): Promise<void> {
   switch (command) {
     case "runDoctor":
-      await vscode.commands.executeCommand("openclawdStudio.runDoctor");
+      await vscode.commands.executeCommand("openclawStudio.runDoctor");
       break;
     case "scaffoldWorkspaceConfig":
-      await vscode.commands.executeCommand("openclawdStudio.scaffoldWorkspaceConfig");
+      await vscode.commands.executeCommand("openclawStudio.scaffoldWorkspaceConfig");
       break;
     case "scaffoldPlugin":
-      await vscode.commands.executeCommand("openclawdStudio.scaffoldPlugin");
+      await vscode.commands.executeCommand("openclawStudio.scaffoldPlugin");
       break;
     case "runOnboard":
-      await vscode.commands.executeCommand("openclawdStudio.runOnboard");
+      await vscode.commands.executeCommand("openclawStudio.runOnboard");
       break;
     case "runGateway":
-      await vscode.commands.executeCommand("openclawdStudio.runGateway");
+      await vscode.commands.executeCommand("openclawStudio.runGateway");
       break;
     case "openDocs":
-      await vscode.commands.executeCommand("openclawdStudio.openDocs");
+      await vscode.commands.executeCommand("openclawStudio.openDocs");
       break;
     case "sponsor":
       await vscode.env.openExternal(vscode.Uri.parse(sponsorUrl));
@@ -95,7 +95,7 @@ async function handleSidebarMessage(context: vscode.ExtensionContext, command: s
 }
 
 async function maybeRefreshDoctor(context: vscode.ExtensionContext): Promise<void> {
-  const config = vscode.workspace.getConfiguration("openclawdStudio");
+  const config = vscode.workspace.getConfiguration("openclawStudio");
   if (!config.get<boolean>("autoRunDoctor", true)) {
     return;
   }
@@ -121,7 +121,7 @@ async function refreshWorkspaceSummary(context: vscode.ExtensionContext, forceMe
         {
           code: "workspace.none",
           level: "info",
-          message: "Open a folder to use OpenClawd Studio."
+          message: "Open a folder to use OpenClaw Studio."
         }
       ]
     };
@@ -159,7 +159,7 @@ async function refreshWorkspaceSummary(context: vscode.ExtensionContext, forceMe
     const errorCount = summary.findings.filter((finding) => finding.level === "error").length;
     const warningCount = summary.findings.filter((finding) => finding.level === "warning").length;
     const label = errorCount > 0 ? `${errorCount} error(s)` : warningCount > 0 ? `${warningCount} warning(s)` : "healthy";
-    void vscode.window.showInformationMessage(`OpenClawd Studio doctor finished: ${label}.`);
+    void vscode.window.showInformationMessage(`OpenClaw Studio doctor finished: ${label}.`);
   }
 
   await maybeShowSponsorNudge(context, summary);
@@ -172,14 +172,14 @@ function applySummary(summary: WorkspaceSummary): void {
   const errorCount = summary.findings.filter((finding) => finding.level === "error").length;
   const warningCount = summary.findings.filter((finding) => finding.level === "warning").length;
   if (errorCount > 0) {
-    statusBar.text = `$(warning) OpenClawd ${errorCount} error${errorCount === 1 ? "" : "s"}`;
-    statusBar.tooltip = "OpenClawd Studio found blocking issues in this workspace.";
+    statusBar.text = `$(warning) OpenClaw ${errorCount} error${errorCount === 1 ? "" : "s"}`;
+    statusBar.tooltip = "OpenClaw Studio found blocking issues in this workspace.";
   } else if (warningCount > 0) {
-    statusBar.text = `$(info) OpenClawd ${warningCount} warning${warningCount === 1 ? "" : "s"}`;
-    statusBar.tooltip = "OpenClawd Studio found recommended fixes for this workspace.";
+    statusBar.text = `$(info) OpenClaw ${warningCount} warning${warningCount === 1 ? "" : "s"}`;
+    statusBar.tooltip = "OpenClaw Studio found recommended fixes for this workspace.";
   } else {
-    statusBar.text = "$(check) OpenClawd ready";
-    statusBar.tooltip = "OpenClawd Studio workspace looks healthy.";
+    statusBar.text = "$(check) OpenClaw ready";
+    statusBar.tooltip = "OpenClaw Studio workspace looks healthy.";
   }
 }
 
@@ -205,7 +205,7 @@ async function publishDiagnostics(
   }
 
   if (!configUri && summary.findings.some((finding) => finding.code === "config.missing")) {
-    const infoMessage = "No `openclaw.json` found. Use `OpenClawd Studio: Create openclaw.json` to scaffold one.";
+    const infoMessage = "No `openclaw.json` found. Use `OpenClaw Studio: Create openclaw.json` to scaffold one.";
     void vscode.window.setStatusBarMessage(infoMessage, 5000);
   }
 
@@ -289,14 +289,14 @@ async function scaffoldPlugin(): Promise<void> {
 }
 
 function runTerminalCommand(command: string): void {
-  const terminal = vscode.window.terminals.find((entry) => entry.name === "OpenClawd Studio")
-    ?? vscode.window.createTerminal({ name: "OpenClawd Studio" });
+  const terminal = vscode.window.terminals.find((entry) => entry.name === "OpenClaw Studio")
+    ?? vscode.window.createTerminal({ name: "OpenClaw Studio" });
   terminal.show(true);
   terminal.sendText(command, true);
 }
 
 function getCliBinary(): string {
-  return vscode.workspace.getConfiguration("openclawdStudio").get<string>("cliBinary", "openclaw");
+  return vscode.workspace.getConfiguration("openclawStudio").get<string>("cliBinary", "openclaw");
 }
 
 function isCliAvailable(binary: string): boolean {
@@ -324,7 +324,7 @@ async function maybeShowSponsorNudge(context: vscode.ExtensionContext, summary: 
   }
 
   const choice = await vscode.window.showInformationMessage(
-    "OpenClawd Studio is helping keep this workspace healthy. Sponsor continued development?",
+    "OpenClaw Studio is helping keep this workspace healthy. Sponsor continued development?",
     "Sponsor",
     "Dismiss"
   );
