@@ -24,6 +24,7 @@ Research and product planning live in:
 
 - [docs/research.md](docs/research.md)
 - [docs/product-plan.md](docs/product-plan.md)
+- [docs/continuation-roadmap.md](docs/continuation-roadmap.md)
 
 ## Commands
 

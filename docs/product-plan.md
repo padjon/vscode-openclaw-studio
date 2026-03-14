@@ -54,3 +54,7 @@ OpenClaw is already strong at runtime, multi-channel delivery, and onboarding. T
 2. Tag `v0.1.0` with packaged VSIX artifact on GitHub Releases.
 3. Publish to VS Code Marketplace when `VSCE_PAT` is configured.
 4. Follow with schema sync, richer diagnostics, and logs/telemetry opt-in only after adoption.
+
+## Continuation
+
+For the current vision, gap analysis, and recommended implementation order, see [docs/continuation-roadmap.md](continuation-roadmap.md).
