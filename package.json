@@ -8,11 +8,11 @@
   "private": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/padjon/openclawd-studio-vscode.git"
+    "url": "https://github.com/padjon/vscode-openclawd-studio.git"
   },
-  "homepage": "https://github.com/padjon/openclawd-studio-vscode#readme",
+  "homepage": "https://github.com/padjon/vscode-openclawd-studio#readme",
   "bugs": {
-    "url": "https://github.com/padjon/openclawd-studio-vscode/issues"
+    "url": "https://github.com/padjon/vscode-openclawd-studio/issues"
   },
   "engines": {
     "vscode": "^1.105.0"
