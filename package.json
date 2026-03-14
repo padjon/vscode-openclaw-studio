@@ -2,7 +2,7 @@
   "name": "openclaw-studio",
   "displayName": "OpenClaw Studio",
   "description": "A VS Code control center for OpenClaw projects with onboarding, config doctoring, and plugin scaffolding.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "padjon",
   "license": "MIT",
   "private": false,
