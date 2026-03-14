@@ -56,6 +56,13 @@ The monetization strategy is sponsorship-led, not paywalled. If the extension sa
 - GitHub Sponsors: https://github.com/sponsors/padjon
 - VS Code Marketplace: https://marketplace.visualstudio.com/items?itemName=padjon.openclaw-studio
 
+## Feedback
+
+If you hit issues or have wishes for new features, tell us:
+
+- GitHub issues: https://github.com/padjon/vscode-openclaw-studio/issues
+- Email: info@devsheep.de
+
 ## Notes
 
 - This project is an independent community tool and is not an official OpenClaw extension.
