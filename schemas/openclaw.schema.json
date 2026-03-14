@@ -1,0 +1,121 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "OpenClaw Workspace Config",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "agent": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "model": {
+          "type": "string",
+          "description": "Default model for the primary OpenClaw agent."
+        }
+      }
+    },
+    "gateway": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "port": {
+          "type": "number",
+          "default": 18789
+        },
+        "bind": {
+          "type": "string",
+          "enum": [
+            "loopback",
+            "custom",
+            "all"
+          ]
+        }
+      }
+    },
+    "browser": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "color": {
+          "type": "string"
+        }
+      }
+    },
+    "channels": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "discord": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "token": {
+              "type": "string"
+            }
+          }
+        },
+        "telegram": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "botToken": {
+              "type": "string"
+            }
+          }
+        },
+        "slack": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "botToken": {
+              "type": "string"
+            },
+            "appToken": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "plugins": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "entries": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "enabled": {
+                "type": "boolean"
+              },
+              "config": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "allow": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "deny": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

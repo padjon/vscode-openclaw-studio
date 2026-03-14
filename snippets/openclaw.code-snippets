@@ -1,0 +1,37 @@
+{
+  "OpenClaw Starter Config": {
+    "scope": "json,jsonc",
+    "prefix": "openclaw-config",
+    "body": [
+      "{",
+      "\t\"$schema\": \"./schemas/openclaw.schema.json\",",
+      "\t\"agent\": {",
+      "\t\t\"model\": \"anthropic/claude-opus-4-6\"",
+      "\t},",
+      "\t\"gateway\": {",
+      "\t\t\"port\": 18789,",
+      "\t\t\"bind\": \"loopback\"",
+      "\t}",
+      "}"
+    ],
+    "description": "Create a starter openclaw.json file."
+  },
+  "OpenClaw Plugin Manifest": {
+    "scope": "json,jsonc",
+    "prefix": "openclaw-plugin",
+    "body": [
+      "{",
+      "\t\"$schema\": \"../../schemas/openclaw.plugin.schema.json\",",
+      "\t\"id\": \"$1\",",
+      "\t\"name\": \"$2\",",
+      "\t\"description\": \"$3\",",
+      "\t\"configSchema\": {",
+      "\t\t\"type\": \"object\",",
+      "\t\t\"additionalProperties\": false,",
+      "\t\t\"properties\": {}",
+      "\t}",
+      "}"
+    ],
+    "description": "Create a starter openclaw.plugin.json manifest."
+  }
+}

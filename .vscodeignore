@@ -1,0 +1,10 @@
+src/**
+scripts/**
+docs/**
+.github/**
+node_modules/**
+package-lock.json
+tsconfig.json
+dist/core/**
+dist/test/**
+dist/views/**
